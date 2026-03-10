@@ -1,0 +1,221 @@
+/* ============================================================
+   Navbar.css — pseudo-elements, transitions, indicator pill
+   Light + dark mode fully supported
+   ============================================================ */
+
+/* ── Navbar base ── */
+.glass-navbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    border-radius: 0;
+    isolation: isolate;
+    transition:
+            top          var(--scroll-spd, 0.45s) cubic-bezier(0.4, 0, 0.2, 1),
+            left         var(--scroll-spd, 0.45s) cubic-bezier(0.4, 0, 0.2, 1),
+            right        var(--scroll-spd, 0.45s) cubic-bezier(0.4, 0, 0.2, 1),
+            border-radius var(--scroll-spd, 0.45s) cubic-bezier(0.4, 0, 0.2, 1),
+            box-shadow   var(--scroll-spd, 0.45s) ease;
+}
+
+/* Glass tint — light mode */
+.glass-navbar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    border-radius: inherit;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    pointer-events: none;
+    transition: background 0.3s, border-color 0.3s;
+}
+
+/* Glass tint — dark mode */
+.dark .glass-navbar::before {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Blur layer */
+.glass-navbar::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    backdrop-filter: blur(var(--nav-blur, 18px));
+    -webkit-backdrop-filter: blur(var(--nav-blur, 18px));
+    pointer-events: none;
+}
+
+/* Floated pill state */
+.glass-navbar.scrolled {
+    top:    var(--nav-top,  1rem);
+    left:   var(--nav-side, 2rem);
+    right:  var(--nav-side, 2rem);
+    border-radius: var(--nav-radius, 999px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.12);
+}
+
+.dark .glass-navbar.scrolled {
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.45);
+}
+
+/* ── Sliding pill indicator ── */
+.nav-indicator {
+    position: absolute;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.06);
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+    transition:
+            left   0.4s cubic-bezier(0.4, 0, 0.2, 1),
+            width  0.4s cubic-bezier(0.4, 0, 0.2, 1),
+            top    0.4s cubic-bezier(0.4, 0, 0.2, 1),
+            height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.dark .nav-indicator {
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow:
+            inset 0 0 0 1px rgba(255, 255, 255, 0.12),
+            0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ── Nav links ── */
+.nav-link {
+    text-decoration: none;
+    color: rgba(15, 23, 42, 0.5);
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 0.9rem 1rem;
+    border-radius: 999px;
+    position: relative;
+    z-index: 1;
+    transition: color var(--speed, 0.25s);
+}
+
+.dark .nav-link       { color: rgba(255, 255, 255, 0.5); }
+.nav-link:hover       { color: #0f172a; }
+.nav-link.active      { color: #0f172a; }
+.dark .nav-link:hover  { color: #e2e8f0; }
+.dark .nav-link.active { color: #ffffff; }
+
+/* ── CTA button ── */
+.navbar-cta {
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #fff;
+    padding: 0.5rem 1.25rem;
+    border-radius: 999px;
+    background: rgba(99, 102, 241, 0.2);
+    border: 1px solid rgba(99, 102, 241, 0.4);
+    box-shadow: 0 0 12px var(--accent-glow);
+    transition: background var(--speed), box-shadow var(--speed), transform var(--speed);
+}
+.navbar-cta:hover {
+    background: rgba(99, 102, 241, 0.35);
+    box-shadow: 0 0 20px var(--accent-glow);
+    transform: translateY(-1px);
+}
+
+/* ── Hamburger ── */
+.mobile-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+.mobile-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.mobile-toggle.open span:nth-child(2) { opacity: 0; }
+.mobile-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── Popup links — light ── */
+.popup-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: rgba(15, 23, 42, 0.55);
+    padding: 13px 16px;
+    border-radius: 16px;
+    position: relative;
+    letter-spacing: -0.01em;
+    transition: background 0.18s, color 0.18s, padding-left 0.18s;
+}
+.popup-link:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: rgba(15, 23, 42, 0.9);
+}
+.popup-link.active {
+    color: #0f172a;
+    padding-left: 38px;
+    background: rgba(0, 0, 0, 0.07);
+    box-shadow:
+            inset 0 0 0 1px rgba(0, 0, 0, 0.1),
+            0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ── Popup links — dark ── */
+.dark .popup-link       { color: rgba(255, 255, 255, 0.55); }
+.dark .popup-link:hover {
+    background: rgba(255, 255, 255, 0.07);
+    color: rgba(255, 255, 255, 0.9);
+}
+.dark .popup-link.active {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow:
+            inset 0 0 0 1px rgba(255, 255, 255, 0.14),
+            0 2px 12px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+/* Glowing dot for active link */
+.popup-link.active::before {
+    content: "";
+    position: absolute;
+    left: 16px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3), 0 0 4px var(--accent);
+}
+
+/* ── Popup CTA ── */
+.popup-cta {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #fff;
+    padding: 13px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(43, 43, 43, 0.35), rgba(7, 7, 7, 0.25));
+    border: 1px solid rgba(11, 11, 11, 0.4);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+.popup-cta:hover {
+    background: linear-gradient(135deg, rgba(60, 60, 60, 0.5), rgba(20, 20, 20, 0.4));
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+    transform: translateY(-1px);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    :root { --nav-side: 0.75rem; --nav-top: 0.5rem; }
+    .mobile-toggle { display: flex; }
+}
