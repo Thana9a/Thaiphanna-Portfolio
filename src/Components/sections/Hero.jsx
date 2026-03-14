@@ -23,7 +23,7 @@
           id={id}
           className={cn(
             "relative min-h-screen flex items-center justify-center px-4",
-            "bg-white dark:bg-zinc-950",   // ← matches About
+            "dark:bg-zinc-950",   // ← matches About
             className,
           )}
         >

@@ -9,7 +9,7 @@ function About({ id, className }) {
       id={id}
       className={cn(
         "lg:gap-6 min-h-screen flex items-center justify-center px-4 py-20",
-        className,
+        className
       )}
     >
       <div className="Container mx-auto max-w-5xl">
@@ -45,7 +45,7 @@ function About({ id, className }) {
                 <p>Developing mobile-friendly and cross-device interfaces that adapt seamlessly to different screen sizes using modern CSS and Tailwind CSS.</p>
             </div>
 
-            <div className="gradient-border p-6 card-hover ">
+            <div className={cn("gradient-border p-6 card-hover")}>
                 <h4 className={"inline-block font-bold"}> <FileCode size={24} className={"inline mr-2 text-gray-500 hover:text-gray-400"}/>Clean & Maintainable Code</h4>
                 <p>Writing structured, readable, and scalable code while following best practices to ensure long-term maintainability and performance.</p>
             </div>

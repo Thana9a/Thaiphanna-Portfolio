@@ -1,5 +1,6 @@
 import { cn } from "../../lib/util";
 import React from "react";
+import {} from "lucide-react";
 
 function Skills({ id, className }) {
   const skills = [
@@ -19,7 +20,7 @@ function Skills({ id, className }) {
     { name: "C/C++", level: 70, category: ["Programming"] },
     { name: "Java", level: 70, category: ["Programming"] },
     {
-      name: "C# (Windows Forms)",
+      name: "C#",
       level: 60,
       category: ["Programming", "Desktop"],
     },
@@ -32,16 +33,30 @@ function Skills({ id, className }) {
   return (
     <section
       id={id}
-      className={cn("min-h-screen flex items-center justify-center px-4")
-      }
+      className={cn("min-h-screen flex items-center justify-center px-4")}
     >
       {/* hello are you okay? */}
       <div className="px-4 py-20">
         <div className="Container mx-auto max-w-5xl">
-            <h2 className = "">My <span>skill</span> </h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-900 dark:text-white">
+            My <span>skill</span>{" "}
+          </h2>
+          <div className={"grid grid-cols-1 md:grid-cols-2 gap-6"}>
+            {skills.map((skill) => (
+              <div key={skill.name} className={cn("card-hover w-96 h-28 p-4 border-zinc-100 border-1 dark:border-zinc-700")}>
+                <h3 className="text-lg font-semibold mb-2">{skill.name}</h3>
+                <div className="w-full bg-gray-600 rounded-full h-2.5 dark:bg-gray-500"
+                     style={{ width: `${skill.level}%` }}>
+                </div>
+                {/*categoria*/}
+                <div className=" flex flex-row text-sm font-medium justify-end">
+                  {skill.level}%
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    
     </section>
   );
 }
