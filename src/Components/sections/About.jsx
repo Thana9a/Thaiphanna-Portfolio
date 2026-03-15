@@ -1,6 +1,5 @@
 import React from "react";
 import { cn } from "../../lib/util";
-import ImFarmer from "../../assets/I'mfarmer.jpg";
 import {Code2, MonitorSmartphone, FileCode} from "lucide-react";
 
 function About({ id, className }) {
@@ -35,7 +34,7 @@ function About({ id, className }) {
 
           <div className="grid grid-cols-1 gap-6">
             <div className="gradient-border p-6 card-hover">
-                <h4 className={"title inline-block font-bold"}> <Code2 size={24} className=" inline mr-2 text-gray-500 text-gray-400" />Front-End Development</h4>
+                <h4 className={"title inline-block font-bold"}> <Code2 size={24} className=" inline mr-2 text-gray-500" />Front-End Development</h4>
                 <p>Building responsive and interactive web applications using React and modern JavaScript. I focus on creating smooth user experiences with clean structure and reusable components.</p>
             </div>
 
