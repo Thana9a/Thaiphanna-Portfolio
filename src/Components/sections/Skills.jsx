@@ -32,7 +32,7 @@ function Skills({ id, className }) {
   ];
   return (
     <section
-      id={id}
+      id={id} className={className}
       className={cn("min-h-screen flex items-center justify-center px-4")}
     >
       {/* hello are you okay? */}
@@ -41,9 +41,9 @@ function Skills({ id, className }) {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-900 dark:text-white">
             My <span>skill</span>{" "}
           </h2>
-          <div className={"grid grid-cols-1 md:grid-cols-2 gap-6"}>
+          <div className={"grid grid-cols-1 md:grid-cols-2 gap-6 justify-center"}>
             {skills.map((skill) => (
-              <div key={skill.name} className={cn("card-hover w-96 h-28 p-4 border-zinc-100 border-1 dark:border-zinc-700")}>
+              <div key={skill.name} className={cn("card-hover w-80 h-28 p-6 px-12 border-zinc-100 border-1 dark:border-zinc-700")}>
                 <h3 className="text-lg font-semibold mb-2">{skill.name}</h3>
                 <div className="w-full bg-gray-600 rounded-full h-2.5 dark:bg-gray-500"
                      style={{ width: `${skill.level}%` }}>

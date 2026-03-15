@@ -6,7 +6,7 @@
     const SOCIAL_LINKS = [
       { label: "GitHub",   href: "https://github.com/yourusername",      icon: Github   },
       { label: "LinkedIn", href: "https://linkedin.com/in/yourusername", icon: Linkedin },
-      { label: "Email",    href: "mailto:you@example.com",               icon: Mail     },
+      { label: "Email",    href: "mailto:thanapro70@gmail.com",               icon: Mail     },
     ];
 
     function Hero({ id, className }) {
@@ -112,3 +112,4 @@
     }
 
     export default Hero;
+    export { SOCIAL_LINKS };

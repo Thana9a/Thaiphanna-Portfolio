@@ -188,3 +188,11 @@
     @apply scale-105;
   }
 }
+
+@utility card {
+    @apply rounded-xl transition-transform duration-300  border-zinc-100 bg-zinc-50 shadow-2xs border mb-2.5 border-zinc-300/50  dark:bg-zinc-800  dark:border-zinc-800/50
+}
+
+@utility inputBOX {
+    @apply flex-1 border border-zinc-100 rounded p-2 bg-zinc-100 shadow-xl dark:bg-zinc-800 dark:border-zinc-600 dark:text-zinc-200 text-stone-800
+}

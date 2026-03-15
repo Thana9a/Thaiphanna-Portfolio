@@ -4,6 +4,7 @@ import Hero from "../Components/sections/Hero";
 import About from "../Components/sections/About";
 import Skills from "../Components/sections/Skills";
 import Project from "../Components/sections/Projects";
+import Contact from "../Components/sections/Contact";
 
 function Home() {
   return (
@@ -24,6 +25,7 @@ function Home() {
       {/* skill */}
         <Skills id="skills" />
       {/* footer */}
+        <Contact id="contact" />
     </div>
   );
 }
