@@ -136,19 +136,19 @@ function Contact({ id, className }) {
                             <div className="flex items-center gap-4">
                                 <label className="w-24 text-sm text-gray-500 text-right shrink-0">Name:</label>
                                 <input type="text" value={name} onChange={(e) => setName(e.target.value)}
-                                       placeholder="Name" className="inputBOX" />
+                                       placeholder="Name" className="inputBOX resize-none overflow-y-auto" />
                             </div>
 
                             <div className="flex items-center gap-4">
                                 <label className="w-24 text-sm text-gray-500 text-right shrink-0">Email:</label>
                                 <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}
-                                       placeholder="thanapro70@gmail.com" className="inputBOX" />
+                                       placeholder="thanapro70@gmail.com" className="inputBOX resize-none overflow-y-auto " />
                             </div>
 
                             <div className="flex items-center gap-4">
                                 <label className="w-24 text-sm text-gray-500 text-right shrink-0">Subject:</label>
                                 <input type="text" value={subject} onChange={(e) => setSubject(e.target.value)}
-                                       placeholder="Subject" className="inputBOX" />
+                                       placeholder="Subject" className="inputBOX resize-none overflow-y-auto" />
                             </div>
 
                             <div className="flex items-start gap-4">

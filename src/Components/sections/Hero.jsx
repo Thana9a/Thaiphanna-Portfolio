@@ -4,8 +4,8 @@
     import heroimage from "../../assets/image.png";
 
     const SOCIAL_LINKS = [
-      { label: "GitHub",   href: "https://github.com/yourusername",      icon: Github   },
-      { label: "LinkedIn", href: "https://linkedin.com/in/yourusername", icon: Linkedin },
+      { label: "GitHub",   href: "https://github.com/Thana9a",      icon: Github   },
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/hong-thaiphanna", icon: Linkedin },
       { label: "Email",    href: "mailto:thanapro70@gmail.com",               icon: Mail     },
     ];
 
