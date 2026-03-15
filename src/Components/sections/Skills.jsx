@@ -2,7 +2,7 @@ import { cn } from "../../lib/util";
 import React from "react";
 import {} from "lucide-react";
 
-function Skills({ id, className }) {
+function Skills({ id}) {
   const skills = [
     // Frontend
     { name: "HTML/CSS", level: 80, category: ["Frontend"] },
@@ -32,7 +32,7 @@ function Skills({ id, className }) {
   ];
   return (
     <section
-      id={id} className={className}
+      id={id}
       className={cn("min-h-screen flex items-center justify-center px-4")}
     >
       {/* hello are you okay? */}
