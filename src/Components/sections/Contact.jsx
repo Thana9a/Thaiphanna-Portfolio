@@ -131,44 +131,45 @@ function Contact({ id, className }) {
 
                     {/* RIGHT: input form */}
                     <div className="flex-1 w-full card border dark:border-zinc-600 rounded-xl">
-                        <div className="flex flex-col gap-3 p-4">
+                        <form onSubmit={handleSubmit} className="flex flex-col gap-3 p-4">
 
-                            <div className="flex items-center gap-4">
-                                <label className="w-24 text-sm text-gray-500 text-right shrink-0">Name:</label>
+                            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                                <label className="w-full sm:w-24 text-sm text-gray-500 sm:text-right shrink-0">Name:</label>
                                 <input type="text" value={name} onChange={(e) => setName(e.target.value)}
-                                       placeholder="Name" className="inputBOX resize-none overflow-y-auto" />
+                                       placeholder="Name" className="inputBOX w-full min-w-0" />
                             </div>
 
-                            <div className="flex items-center gap-4">
-                                <label className="w-24 text-sm text-gray-500 text-right shrink-0">Email:</label>
+                            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                                <label className="w-full sm:w-24 text-sm text-gray-500 sm:text-right shrink-0">Email:</label>
                                 <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}
-                                       placeholder="thanapro70@gmail.com" className="inputBOX resize-none overflow-y-auto " />
+                                       placeholder="thanapro70@gmail.com" className="inputBOX w-full min-w-0" />
                             </div>
 
-                            <div className="flex items-center gap-4">
-                                <label className="w-24 text-sm text-gray-500 text-right shrink-0">Subject:</label>
+                            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                                <label className="w-full sm:w-24 text-sm text-gray-500 sm:text-right shrink-0">Subject:</label>
                                 <input type="text" value={subject} onChange={(e) => setSubject(e.target.value)}
-                                       placeholder="Subject" className="inputBOX resize-none overflow-y-auto" />
+                                       placeholder="Subject" className="inputBOX w-full min-w-0" />
                             </div>
 
-                            <div className="flex items-start gap-4">
-                                <label className="w-24 text-sm text-gray-500 text-right shrink-0 mt-2">Message:</label>
+                            <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4">
+                                <label className="w-full sm:w-24 text-sm text-gray-500 sm:text-right shrink-0 sm:mt-2">Message:</label>
                                 <textarea value={message} onChange={(e) => setMessage(e.target.value)}
-                                          placeholder="Message" rows={5} className="inputBOX resize-none overflow-y-auto" />
+                                          placeholder="Message" rows={5} className="inputBOX w-full min-w-0 resize-none overflow-y-auto" />
                             </div>
-                            {" "}
+
                             {status === "Success" && (
-                                <div className={"text-green-700 text-sm text-center"}>Success-_-</div>
+                                <div className="text-green-700 text-sm text-center">Success-_-</div>
                             )}
                             {status === "Error" && (
-                                <div className={"text-red-700 text-sm text-center"}>Error !!!</div>
+                                <div className="text-red-700 text-sm text-center">Error !!!</div>
                             )}
-                            <div className="flex primary-btn justify-center">
-                                <button onClick={handleSubmit} disabled={isSubmitting} className="btn-primary">
-                                    {isSubmitting ? "Sending..." : "Send Message"}</button>
-                            </div>
 
-                        </div>
+                            <div className="flex justify-center">
+                                <button type="submit" disabled={isSubmitting} className="btn-primary">
+                                    {isSubmitting ? "Sending..." : "Send Message"}
+                                </button>
+                            </div>
+                        </form>
                     </div>
 
                 </div>
