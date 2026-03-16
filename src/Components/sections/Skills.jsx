@@ -13,7 +13,7 @@ function Skills({ id}) {
 
     // Backend
     { name: "PHP", level: 30, category: ["Backend", "Programming"] },
-    { name: "Laravel", level: 25, category: ["Backend"] },
+    // { name: "Laravel", level: 25, category: ["Backend"] },
     { name: "Python", level: 25, category: ["Backend", "Programming"] },
 
     // Programming
@@ -26,7 +26,7 @@ function Skills({ id}) {
     },
 
     // Database
-    { name: "SQL", level: 50, category: ["Database"] },
+    // { name: "SQL", level: 50, category: ["Database"] },
     { name: "SQL Server", level: 50, category: ["Database"] },
     { name: "MySQL", level: 40, category: ["Database"] },
   ];
