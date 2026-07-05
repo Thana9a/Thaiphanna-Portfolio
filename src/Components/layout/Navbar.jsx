@@ -19,25 +19,25 @@ function BrandIcon({ size = 28 }) {
 }
 
 export default function Nav() {
-    const [scrolled,  setScrolled]  = useState(false);
-    const [menuOpen,  setMenuOpen]  = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
     const [activeIdx, setActiveIdx] = useState(0);
 
-    const navRef       = useRef(null);
-    const linkRefs     = useRef([]);
+    const navRef = useRef(null);
+    const linkRefs = useRef([]);
     const indicatorRef = useRef(null);
-    const popupRef     = useRef(null);
+    const popupRef = useRef(null);
 
     useEffect(() => {
         const root = document.documentElement.style;
-        root.setProperty("--accent",      CONFIG.colors.accent);
+        root.setProperty("--accent", CONFIG.colors.accent);
         root.setProperty("--accent-glow", CONFIG.colors.accentGlow);
-        root.setProperty("--nav-blur",    CONFIG.nav.blur);
-        root.setProperty("--nav-radius",  CONFIG.nav.radius);
-        root.setProperty("--nav-top",     CONFIG.nav.topOffset);
-        root.setProperty("--nav-side",    CONFIG.nav.sideOffset);
-        root.setProperty("--speed",       CONFIG.speed.transition);
-        root.setProperty("--scroll-spd",  CONFIG.speed.scroll);
+        root.setProperty("--nav-blur", CONFIG.nav.blur);
+        root.setProperty("--nav-radius", CONFIG.nav.radius);
+        root.setProperty("--nav-top", CONFIG.nav.topOffset);
+        root.setProperty("--nav-side", CONFIG.nav.sideOffset);
+        root.setProperty("--speed", CONFIG.speed.transition);
+        root.setProperty("--scroll-spd", CONFIG.speed.scroll);
     }, []);
 
     useEffect(() => {
@@ -75,14 +75,14 @@ export default function Nav() {
     useEffect(() => {
         if (window.innerWidth <= 768) return;
         const activeLink = linkRefs.current[activeIdx];
-        const indicator  = indicatorRef.current;
-        const navList    = activeLink?.closest("ul");
+        const indicator = indicatorRef.current;
+        const navList = activeLink?.closest("ul");
         if (!activeLink || !indicator || !navList) return;
         const listRect = navList.getBoundingClientRect();
         const linkRect = activeLink.getBoundingClientRect();
-        indicator.style.left   = linkRect.left   - listRect.left   + "px";
-        indicator.style.top    = linkRect.top    - listRect.top    + "px";
-        indicator.style.width  = linkRect.width  + "px";
+        indicator.style.left = linkRect.left - listRect.left + "px";
+        indicator.style.top = linkRect.top - listRect.top + "px";
+        indicator.style.width = linkRect.width + "px";
         indicator.style.height = linkRect.height + "px";
     }, [activeIdx, scrolled]);
 
@@ -192,9 +192,9 @@ export default function Nav() {
           [backdrop-filter:blur(40px)_saturate(200%)]
           transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]
           ${menuOpen
-                    ? "opacity-100 scale-100 translate-y-0 pointer-events-auto"
-                    : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
-                }
+                        ? "opacity-100 scale-100 translate-y-0 pointer-events-auto"
+                        : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
+                    }
         `}
             >
                 {/* Popup brand row */}

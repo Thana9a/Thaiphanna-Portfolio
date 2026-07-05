@@ -1,64 +1,96 @@
 import { cn } from "../../lib/util";
 import React from "react";
-import {} from "lucide-react";
+// eslint-disable-next-line no-unused-vars
+import { motion } from "framer-motion";
+import { fadeUp, staggerContainer, cardVariant, viewportOnce } from "../../lib/motion";
 
-function Skills({ id}) {
-  const skills = [
-    // Frontend
-    { name: "HTML/CSS", level: 80, category: ["Frontend"] },
-    { name: "JavaScript", level: 70, category: ["Frontend", "Programming"] },
-    { name: "React", level: 70, category: ["Frontend"] },
-    { name: "Bootstrap", level: 85, category: ["Frontend"] },
-    { name: "Tailwind CSS", level: 80, category: ["Frontend"] },
+const skills = [
+  // Frontend
+  { name: "HTML / CSS",    level: 75, category: "Frontend"    },
+  { name: "JavaScript",   level: 60, category: "Frontend"    },
+  { name: "React",        level: 65, category: "Frontend"    },
+  { name: "Bootstrap",    level: 85, category: "Frontend"    },
+  { name: "Tailwind CSS", level: 80, category: "Frontend"    },
+  // Backend
+  { name: "PHP",          level: 40, category: "Backend"     },
+  { name: "Laravel",      level: 25, category: "Backend"     },
+  { name: "Spring Boot",  level: 55, category: "Backend"     },
+  // Programming
+  { name: "C / C++",      level: 70, category: "Programming" },
+  { name: "Python",       level: 25, category: "programming" },
+  { name: "Java",         level: 65, category: "Programming" },
+  { name: "C#",           level: 55, category: "Programming" },
+  // Database
+  { name: "SQL Server",   level: 50, category: "Database"    },
+  { name: "MySQL",        level: 50, category: "Database"    },
+];
 
-    // Backend
-    { name: "PHP", level: 30, category: ["Backend", "Programming"] },
-    // { name: "Laravel", level: 25, category: ["Backend"] },
-    { name: "Python", level: 25, category: ["Backend", "Programming"] },
-
-    // Programming
-    { name: "C/C++", level: 70, category: ["Programming"] },
-    { name: "Java", level: 70, category: ["Programming"] },
-    {
-      name: "C#",
-      level: 60,
-      category: ["Programming", "Desktop"],
-    },
-
-    // Database
-    // { name: "SQL", level: 50, category: ["Database"] },
-    { name: "SQL Server", level: 50, category: ["Database"] },
-    { name: "MySQL", level: 40, category: ["Database"] },
-  ];
+function Skills({ id }) {
   return (
-    <section
+    <motion.section
       id={id}
-      className={cn("min-h-screen flex items-center justify-center px-4")}
+      className={cn("flex items-center justify-center px-4 py-24")}
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={viewportOnce}
     >
-      {/* hello are you okay? */}
-      <div className="px-4 py-20">
-        <div className="Container mx-auto max-w-5xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-900 dark:text-white">
-            My <span>skill</span>{" "}
-          </h2>
-          <div className={"grid grid-cols-1 md:grid-cols-2 gap-6 justify-center"}>
+      <div className="px-4">
+        <div className="mx-auto max-w-5xl">
+          {/* Heading */}
+          <motion.h2
+            variants={fadeUp}
+            className="text-3xl md:text-4xl font-bold text-center mb-12 text-slate-900 dark:text-white"
+          >
+            My{" "}
+            <span className="bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">
+              Skills
+            </span>
+          </motion.h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 justify-center">
             {skills.map((skill) => (
-              <div key={skill.name} className={cn("card-hover w-80 h-28 p-6 px-12 border-zinc-100 border-1 dark:border-zinc-700")}>
-                <h3 className="text-lg font-semibold mb-2">{skill.name}</h3>
-                <div className="w-full bg-gray-600 rounded-full h-2.5 dark:bg-gray-500"
-                     style={{ width: `${skill.level}%` }}>
+              <motion.div
+                key={skill.name}
+                variants={cardVariant}
+                className={cn(
+                  "card-hover w-80 p-5 px-6 border-zinc-100 border dark:border-zinc-700",
+                )}
+              >
+                {/* Name + percentage row */}
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="text-sm font-semibold">{skill.name}</h3>
+                  <span className="text-xs font-medium text-indigo-500 dark:text-indigo-400">
+                    {skill.level}%
+                  </span>
                 </div>
-                {/*categoria*/}
-                <div className=" flex flex-row text-sm font-medium justify-end">
-                  {skill.level}%
+
+                {/* Progress bar track */}
+                <div className="w-full bg-zinc-200 dark:bg-zinc-700 rounded-full h-1.5 overflow-hidden">
+                  {/* Fill bar — this is the actual progress */}
+                  <motion.div
+                    className="h-full rounded-full bg-gradient-to-r from-indigo-500 to-purple-500"
+                    initial={{ width: 0 }}
+                    whileInView={{ width: `${skill.level}%` }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+                  />
                 </div>
-              </div>
+
+                {/* Category tag */}
+                <div className="mt-2 text-right">
+                  <span className="text-[10px] uppercase tracking-wider text-zinc-400 dark:text-zinc-500 font-medium">
+                    {skill.category}
+                  </span>
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 
 export default Skills;
+
