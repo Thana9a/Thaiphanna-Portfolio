@@ -6,23 +6,30 @@ import { fadeUp, staggerContainer, cardVariant, viewportOnce } from "../../lib/m
 
 const skills = [
   // Frontend
-  { name: "HTML / CSS",    level: 75, category: "Frontend"    },
-  { name: "JavaScript",   level: 60, category: "Frontend"    },
-  { name: "React",        level: 65, category: "Frontend"    },
-  { name: "Bootstrap",    level: 85, category: "Frontend"    },
-  { name: "Tailwind CSS", level: 80, category: "Frontend"    },
+  { name: "HTML / CSS",    level: 75, category: "Frontend"    }, 
+  { name: "JavaScript",   level: 60, category: "Frontend"    }, 
+  { name: "React",        level: 65, category: "Frontend"    }, 
+  { name: "Bootstrap",    level: 80, category: "Frontend"    }, 
+  { name: "Tailwind CSS", level: 75, category: "Frontend"    }, 
+
   // Backend
-  { name: "PHP",          level: 40, category: "Backend"     },
-  { name: "Laravel",      level: 25, category: "Backend"     },
-  { name: "Spring Boot",  level: 55, category: "Backend"     },
+  { name: "PHP",          level: 35, category: "Backend"     }, 
+  { name: "Laravel",      level: 30, category: "Backend"     }, 
+  { name: "Spring Boot",  level: 38, category: "Backend"     }, 
+
   // Programming
-  { name: "C / C++",      level: 70, category: "Programming" },
-  { name: "Python",       level: 25, category: "programming" },
-  { name: "Java",         level: 65, category: "Programming" },
+  { name: "C / C++",      level: 55, category: "Programming" }, 
+  { name: "Python",       level: 20, category: "Programming" }, 
+  { name: "Java",         level: 65, category: "Programming" }, 
   { name: "C#",           level: 55, category: "Programming" },
+
   // Database
-  { name: "SQL Server",   level: 50, category: "Database"    },
-  { name: "MySQL",        level: 50, category: "Database"    },
+  { name: "SQL Server",   level: 45, category: "Database"    }, 
+  { name: "MySQL",        level: 50, category: "Database"    }, 
+
+  // Tools
+  { name: "Docker",       level: 57, category: "Tools"       }, 
+  { name: "Git / GitHub", level: 65, category: "Tools"       }, 
 ];
 
 function Skills({ id }) {
