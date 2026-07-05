@@ -14,18 +14,18 @@ import {
 const cards = [
   {
     icon: Code2,
-    title: "Front-End Development",
-    body: "Building responsive and interactive web applications using React and modern JavaScript. I focus on creating smooth user experiences with clean structure and reusable components.",
+    title: "Backend Development",
+    body: "Building REST APIs and backend systems using Spring Boot with layered architecture — Repository pattern, Service layer, and DTO. Containerized with Docker and Nginx for deployment.",
   },
   {
     icon: MonitorSmartphone,
-    title: "Responsive Web Design",
-    body: "Developing mobile-friendly and cross-device interfaces that adapt seamlessly to different screen sizes using modern CSS and Tailwind CSS.",
+    title: "Frontend Development",
+    body: "Developing responsive web interfaces using React and Tailwind CSS. Comfortable building component-based UIs and deploying on Vercel.",
   },
   {
     icon: FileCode,
     title: "Clean & Maintainable Code",
-    body: "Writing structured, readable, and scalable code while following best practices to ensure long-term maintainability and performance.",
+    body: "Writing structured, readable code following best practices including separation of concerns, proper layering, and version control with Git and GitHub.",
   },
 ];
 
@@ -55,25 +55,25 @@ function About({ id, className }) {
           {/* Left: bio text */}
           <motion.div variants={fadeLeft} className="space-y-5">
             <h3 className="text-2xl font-semibold text-slate-800 dark:text-slate-100">
-              Passion for Web Development and Design
-            </h3>
-            <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-              I am a third-year Computer Science student at the Royal University
-              of Phnom Penh with a strong foundation in front-end development. I
-              enjoy building clean, responsive, and user-friendly web
-              applications using React, JavaScript, and modern UI practices.
-            </p>
-            <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-              Currently, I am expanding my skills into back-end development. I
-              am learning Python and preparing to work with Django, while also
-              studying PHP and Laravel at university. My goal is to become a
-              full-stack developer capable of building complete and scalable web
-              applications.
-            </p>
-            <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-              I am passionate about continuous learning and improving my
-              technical skills through projects and hands-on practice.
-            </p>
+                Passionate about Backend Development
+              </h3>
+                <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                  I am a fourth-year Computer Science student at the Royal University
+                  of Phnom Penh with a genuine interest in backend development. I have
+                  built a Club Management System using Spring Boot, applying layered
+                  architecture — Repository pattern, Service layer, DTO, and REST API —
+                  containerized with Docker and Nginx.
+                </p>
+                <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                  I also have basic experience with Laravel and front-end development
+                  using React and Tailwind CSS. I am continuously learning through
+                  hands-on projects and seeking an internship to grow in a professional
+                  environment.
+                </p>
+                <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                  Outside of coding, I enjoy playing badminton and exploring new
+                  technologies in backend and DevOps.
+                </p>
           </motion.div>
 
           {/* Right: highlight cards */}

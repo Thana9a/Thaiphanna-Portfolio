@@ -68,7 +68,7 @@ function Skills({ id }) {
                 <div className="flex items-center justify-between mb-3">
                   <h3 className="text-sm font-semibold">{skill.name}</h3>
                   <span className="text-xs font-medium text-indigo-500 dark:text-indigo-400">
-                    {skill.level}%
+                    {skill.level}
                   </span>
                 </div>
 

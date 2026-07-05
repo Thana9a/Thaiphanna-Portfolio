@@ -51,7 +51,7 @@ function Hero({ id, className }) {
             <m.div variants={fadeUp}>
               <div className="inline-flex items-center gap-2 rounded-full border mb-2.5 border-slate-500/60 px-4 py-1 text-slate-700 transition-colors hover:bg-slate-900/5 dark:border-gray-400/70 dark:text-gray-200 dark:hover:bg-white/5">
                 <CircleUser size={16} />
-                <span>Front-end Developer</span>
+                <span>Backend Developer</span>
               </div>
             </m.div>
             <m.div variants={fadeUp} className="mt-6">
@@ -62,11 +62,11 @@ function Hero({ id, className }) {
                 </span>
               </h1>
               <p className="mt-4 max-w-xl mx-auto md:mx-0 text-slate-500 dark:text-slate-400 text-lg leading-relaxed">
-                I focus on creating clean, responsive,{" "}
+                I focus on building{" "}
                 <span className="font-semibold text-slate-800 dark:text-slate-200">
-                  user-friendly web interfaces
+                  backend systems and REST APIs
                 </span>{" "}
-                using modern front-end technologies.
+                using Spring Boot, Docker, and MySQL.
               </p>
             </m.div>
 
